@@ -9,7 +9,7 @@
     {
       "id": "custom-points-layer",
       "type": "circle",
-      "source": "tasl-thermal-source",
+      "source": "task-thermal-source",
       "paint": {
         "circle-radius": 4,
         "circle-color": "#ff0000",
