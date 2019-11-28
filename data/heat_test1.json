@@ -10,7 +10,7 @@
       "id": "custom-heatmap-layer",
       "type": "heatmap",
       "source": "task-thermal-source",
-      "maxzoom": 20,
+      "maxzoom": 9,
       "paint": {
         "heatmap-weight": [
           "interpolate",
@@ -24,7 +24,7 @@
           ["linear"],
           ["zoom"],
           0, 1,
-          20, 3
+          9, 3
         ],
         "heatmap-color": [
           "interpolate",
@@ -42,7 +42,7 @@
           ["linear"],
           ["zoom"],
           0, 2,
-          20, 20
+          9, 20
         ],
       },
       "filter": ["in", "$type", "Point"]
