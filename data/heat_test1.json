@@ -19,7 +19,7 @@
           0, 0,
           6, 1
         ],
-        "heatmap-radius": 4,
+        "heatmap-radius": 20,
         "heatmap-color": [
           "interpolate",
           ["linear"],
