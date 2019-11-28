@@ -7,14 +7,14 @@
   },
   "layers": [
     {
-      "id": "tas-heatmap-layer",
-      "type": "heatmap",
+      "id": "task-heatmap-layer",
+      "type": "circle",
       "source": "task-thermal-source",
       "paint": {
-        "heatmap-radius": 20,
-        "heatmap-color": "#0000ff",
-        "heatmap-stroke-width": 2,
-        "heatmap-stroke-color": "#fff"
+        "circle-radius": 4,
+        "circle-color": "#ff0000",
+        "circle-stroke-width": 2,
+        "circle-stroke-color": "#fff"
       },
       "filter": ["in", "$type", "Point"]
     }
