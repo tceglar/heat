@@ -1,8 +1,8 @@
 {
   "sources": {
-    "some-lines-source": {
-      "type": "some-lines-source",
-      "data":{
+    "some-points-source": {
+      "type": "geojson",
+      "data": {
         "type": "FeatureCollection",
           "features": [
             {
@@ -114,7 +114,7 @@
     {
       "id": "heatmap-thermals",
       "type": "heatmap",
-      "source": "some-lines-source",
+      "source": "some-points-source",
       "maxzoom": 9,
       "paint": {
       // Increase the heatmap weight based on frequency and property magnitude
