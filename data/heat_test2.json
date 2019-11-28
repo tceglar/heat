@@ -3,13 +3,13 @@
     "task-thermal-source": {
       "type": "geojson",
       "data": "https://raw.githubusercontent.com/tceglar/heat/master/data/smallsample.geojson"
-            }
+    }
   },
   "layers": [
     {
       "id": "custom-points-layer",
       "type": "circle",
-      "source": "some-points-source",
+      "source": "tasl-thermal-source",
       "paint": {
         "circle-radius": 4,
         "circle-color": "#ff0000",
