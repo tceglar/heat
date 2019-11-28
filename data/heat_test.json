@@ -1,0 +1,162 @@
+{
+  "sources": {
+    "some-points-source": {
+      "type": "geojson",
+      "data": {
+        "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "geometry": {
+                "type": "Point",
+                "coordinates": [11.663722, 45.793422, 739]
+              },
+              "properties": {
+                "mag": 0.01,
+                "time": 35096.5}
+            },
+            {
+              "type": "Feature",
+              "geometry": {
+                "type": "Point",
+                "coordinates": [11.663716, 45.79342, 740]
+                },
+                "properties": {
+                  "mag": 0.0,
+                  "time": 35156.5}
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [11.663725, 45.793424, 739]
+                  },
+                "properties": {
+                  "mag": 0.0,
+                  "time": 35276.5}
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [11.663919, 45.793393, 739]
+                  },
+                "properties": {
+                  "mag": 0.11,
+                  "time": 35336.5}
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [11.666184, 45.79367, 752]
+                  },
+                "properties": {
+                  "mag": 0.06,
+                  "time": 35396.5}
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [11.679116, 45.794522, 734]
+                  },
+                "properties": {
+                  "mag": 1.16,
+                  "time": 35576.5}
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [11.679729, 45.79578, 839]
+                  },
+                "properties": {
+                  "mag": 1.58,
+                  "time": 35636.5}
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [11.679809, 45.796541, 924]
+                  },
+                "properties": {
+                  "mag": 1.48,
+                  "time": 35696.5}
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [11.679944, 45.796417, 1016]
+                  },
+                "properties": {
+                  "mag": 1.76,
+                  "time": 35756.5}
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [11.679243, 45.796019, 1135]
+                  },
+                "properties": {
+                  "mag": 1.68,
+                  "time": 35816.5
+                }
+              }
+            ]
+          }
+        }
+      },
+        "layers": [
+    {
+      "id": "heatmap-thermals",
+      "type": "heatmap",
+      "source": "some-points-source",
+      "maxzoom": 9,
+      "paint": {
+      "heatmap-weight": [
+      "interpolate",
+      ["linear"],
+      ["get", "mag"],
+      0, 0,
+      6, 1
+      ],
+      "heatmap-intensity": [
+      "interpolate",
+      ["linear"],
+      ["zoom"],
+      0, 1,
+      9, 3
+      ],
+      "heatmap-color": [
+      "interpolate",
+      ["linear"],
+      ["heatmap-density"],
+      0, "rgba(33,102,172,0)",
+      0.2, "rgb(103,169,207)",
+      0.4, "rgb(209,229,240)",
+      0.6, "rgb(253,219,199)",
+      0.8, "rgb(239,138,98)",
+      1, "rgb(178,24,43)"
+      ],
+      "heatmap-radius": [
+      "interpolate",
+      ["linear"],
+      ["zoom"],
+      0, 2,
+      9, 20
+      ],
+      "heatmap-opacity": [
+      "interpolate",
+      ["linear"],
+      ["zoom"],
+      7, 1,
+      9, 0
+      ],
+      }
+    },
+  ]
+}
