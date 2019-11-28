@@ -1,0 +1,22 @@
+{
+  "sources": {
+    "task-thermal-source": {
+      "type": "geojson",
+      "data": "https://raw.githubusercontent.com/tceglar/heat/master/data/smallsample.geojson"
+    }
+  },
+  "layers": [
+    {
+      "id": "tas-heatmap-layer",
+      "type": "heatmap",
+      "source": "task-thermal-source",
+      "paint": {
+        "heatmap-radius": 20,
+        "heatmap-color": "#0000ff",
+        "heatmap-stroke-width": 2,
+        "heatmap-stroke-color": "#fff"
+      },
+      "filter": ["in", "$type", "Point"]
+    }
+  ]
+}
