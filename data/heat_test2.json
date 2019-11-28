@@ -1,0 +1,22 @@
+{
+  "sources": {
+    "task-thermal-source": {
+      "type": "geojson",
+      "data": "https://raw.githubusercontent.com/tceglar/heat/master/data/smallsample.geojson"
+            }
+  },
+  "layers": [
+    {
+      "id": "custom-points-layer",
+      "type": "circle",
+      "source": "some-points-source",
+      "paint": {
+        "circle-radius": 4,
+        "circle-color": "#ff0000",
+        "circle-stroke-width": 2,
+        "circle-stroke-color": "#fff"
+      },
+      "filter": ["in", "$type", "Point"]
+    }
+  ]
+}
