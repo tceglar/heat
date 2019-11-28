@@ -10,33 +10,33 @@
       "id": "custom-heatmap-layer",
       "type": "heatmap",
       "source": "task-thermal-source",
-      "maxzoom": 15,
+      "maxzoom": 9,
       "paint": {
         "heatmap-weight": [
           "interpolate",
           ["linear"],
           ["get", "mag"],
           0, 0,
-          6, 6
+          6, 1
         ],
         "heatmap-intensity": [
           "interpolate",
           ["linear"],
           ["zoom"],
           0, 1,
-          15, 3
+          9, 3
         ],
         "heatmap-radius":20,
         "heatmap-color": [
           "interpolate",
           ["linear"],
           ["heatmap-density"],
-          0, "hex(#010005)",
-          0.2, "hex(#3d0f71)",
-          0.4, "hex(#8e2a81)",
-          0.6, "hex(#df4a68)",
-          0.8, "hex(#fea16e)",
-          1, "hex(#fcfdbf)"
+          0, "rgb(252,255,164)",
+          0.2, "rgb(252,166,12)",
+          0.4, "rgb(222,82,56)",
+          0.6, "rgb(149,38,103)",
+          0.8, "rgb(68,10,104)",
+          1, "rgb(1,0,5)"
         ]
       },
       "filter": ["in", "$type", "Point"]
