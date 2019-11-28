@@ -2,12 +2,12 @@
   "sources": {
     "task-thermal-source": {
       "type": "geojson",
-      "data": "https://raw.githubusercontent.com/tceglar/heat/master/data/smallsample3.geojson"
+      "data": "https://raw.githubusercontent.com/tceglar/heat/master/data/smallsample.geojson"
     }
   },
   "layers": [
     {
-      "id": "task-heatmap-layer",
+      "id": "custom-points-layer",
       "type": "circle",
       "source": "task-thermal-source",
       "paint": {
