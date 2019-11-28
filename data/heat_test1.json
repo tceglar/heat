@@ -12,7 +12,6 @@
     "source": "task-thermal-source",
     "maxzoom": 15,
     "paint": {
-    // Increase the heatmap weight based on frequency and property magnitude
     "heatmap-weight": [
     "interpolate",
     ["linear"],
@@ -20,8 +19,6 @@
     0, 0,
     6, 1
     ],
-    // Increase the heatmap color weight weight by zoom level
-    // heatmap-intensity is a multiplier on top of heatmap-weight
     "heatmap-intensity": [
     "interpolate",
     ["linear"],
@@ -29,9 +26,6 @@
     0, 1,
     15, 1
     ],
-    // Color ramp for heatmap.  Domain is 0 (low) to 1 (high).
-    // Begin color ramp at 0-stop with a 0-transparancy color
-    // to create a blur-like effect.
     "heatmap-color": [
     "interpolate",
     ["linear"],
@@ -42,7 +36,6 @@
     0.75, "rgb(149,38,103)",
     1, "rgb(68,10,104)",
     ],
-    // Adjust the heatmap radius by zoom level
     "heatmap-radius": [
     "interpolate",
     ["linear"],
@@ -54,7 +47,6 @@
     12, 11,
     15, 25
     ],
-    // Transition from heatmap to circle layer by zoom level
     "heatmap-opacity": [
     "interpolate",
     ["linear"],
