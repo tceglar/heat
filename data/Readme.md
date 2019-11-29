@@ -1,4 +1,5 @@
 # Data repo
 
  * geojson data
- * json files with heatmap layers
+  * bigdata.geojson - Task at the Trofeo Montegrappa 2019
+ * json files with heatmap layer definition for custom layer on [seeyou.cloud](seeyou.cloud)
