@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Display a map with a custom style</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .map-overlay {
+            font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            position: absolute;
+            width: 25%;
+            top: 0;
+            left: 0;
+            padding: 10px;
+        }
+
+            .map-overlay .map-overlay-inner {
+                background-color: #FFFFFF;
+                opacity: 1;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+                border-radius: 3px;
+                padding: 10px;
+                margin-bottom: 5px;
+            }
+
+            .map-overlay h2 {
+                line-height: 24px;
+                display: block;
+                margin: 0 0 10px;
+            }
+
+            .map-overlay input {
+                background-color: transparent;
+                display: inline-block;
+                width: 100%;
+                position: relative;
+                margin: 0;
+                cursor: ew-resize;
+            }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+
+<div class="map-overlay top">
+    <div class="map-overlay-inner">
+        <h2>Vario (m/s)</h2>
+        <label id="vario-label"></label>
+        <input id="slider" type="range" min="0" max="5" step="0.1" value="1.0" />
+    </div>
+
+    <div class="map-overlay-inner">
+        <h2>Vario start Altitude (m)</h2>
+        <label id="label-altitude-in"></label>
+        <input id="slider-altitude-in" type="range" min="0" max="5000" step="100" value="1000" />
+    </div>
+
+    <div class="map-overlay-inner">
+        <h2>Time</h2>
+        <label id="label-time"></label>
+        <input id="slider-time" type="range" min="30000" max="60000" step="100" value="30000" />
+    </div>
+</div>
+
+
+<script>
+
+	mapboxgl.accessToken = 'pk.eyJ1IjoidGNlZ2xhciIsImEiOiJjazNpenVhc3UwYzBsM2Zya3Ntdzc2cTVhIn0.dml6SWuMUcv9zbsAN7CqFQ';
+
+    var varioFilterValue = 1;
+    var altInFilterValue = 1000;
+    var timeFilterValue = 30000;
+
+    var map = new mapboxgl.Map({
+        container: 'map',           // container id
+        style: 'mapbox://styles/tceglar/ck5wh0yfm200c1imqwtms1hkd', // stylesheet location
+        center: [12.0, 46], // starting position [lng, lat]
+        zoom: 9 // starting zoom
+    });
+
+    map.on('load',
+        function () {
+
+
+            filterBy(varioFilterValue, altInFilterValue, timeFilterValue);
+
+
+            $('#slider, #slider-altitude-in, #slider-time').on('input',
+                function (e) {
+                    var $varioSlider = $('#slider')[0];
+                    var $altitudeSlider = $('#slider-altitude-in')[0];
+                    var $timeSlider = $('#slider-time')[0];
+
+                    varioFilterValue = parseFloat($varioSlider.value, 2);
+                    altInFilterValue = parseInt($altitudeSlider.value);
+                    timeFilterValue = parseFloat($timeSlider.value, 1);
+                    filterBy(varioFilterValue, altInFilterValue, timeFilterValue );
+                });
+        });
+
+    function filterBy(vario, altitude, time) {
+        // Add updated filters
+        var filters = ['all',
+                        ['>=', 'vario', vario],
+                        ['>=', 'altitude_enter', altitude],
+                        ['<=', 'time_enter', time],
+                        // ['>=', 'time_exit', time]
+        ];
+
+        map.setFilter('montegrappa2019-t1 lines', filters);
+        map.setFilter('montegrappa2019-t1 numbers', filters);
+
+        // Set the labels
+        $('#vario-label').html(vario);
+        $('#label-altitude-in').html(altitude);
+        $('#label-time').html(time);
+    }
+
+
+</script>
+ 
+</body>
+</html>
