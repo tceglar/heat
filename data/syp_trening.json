@@ -9,7 +9,8 @@
       {
         "id": "task-heatmap-layer",
         "type": "line",
-        "source": "task-thermal-source",
+        "source": "composite",
+        "source-layer": "task-thermal-source",
         "layout": {"line-cap": "round"},
         "paint": {
             "line-color": [
@@ -54,10 +55,11 @@
             ]
         }
       },
-{
+        {
             "id": "task-heatmap-layer",
             "type": "symbol",
-            "source": "task-thermal-source",
+            "source": "composite",
+            "source-layer": "task-thermal-source",
             "layout": {
                 "text-field": [
                     "step",
@@ -84,4 +86,4 @@
             }
         }
     ]
-  }
+}
