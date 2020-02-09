@@ -1,33 +1,3 @@
-
-Skip to content
-Pull requests
-Issues
-Marketplace
-Explore
-@tceglar
-Learn Git and GitHub without any code!
-
-Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
-tceglar /
-heat
-
-1
-0
-
-    0
-
-Code
-Issues 0
-Pull requests 0
-Actions
-Projects 0
-Wiki
-Security
-Insights
-Settings
-heat/data/heat_1.json
-@tceglar tceglar Add files via upload b0da9c1 on 28 Nov 2019
-62 lines (62 sloc) 1.2 KB
 {
     "sources": {
       "task-thermal-source": {
